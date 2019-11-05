@@ -13,7 +13,7 @@
 	DarkRunestoneMaxHeight = 9
 	#Minimum height for the Dark Stone
 	#Range: 1 ~ 256
-	DarkStoneMinHeight = 0
+	DarkStoneMinHeight = 1
 	#Generate Arcane Crystal Ore
 	generateArcaneCrystalOre = true
 	#Maximum height for the Arcane Crystal Ore
@@ -37,7 +37,7 @@
 	RunestoneMaxHeight = 25
 	#Minimum height for the Runestone
 	#Range: 1 ~ 256
-	RunestoneMinHeight = 0
+	RunestoneMinHeight = 1
 	#Maximum size of Dark Stone vein
 	#Range: 0 ~ 500
 	maxDarkStoneVeinSize = 20
@@ -52,10 +52,10 @@
 	maxDarkRunestoneVeinSize = 3
 	#Minimum height for the Arcane Crystal Ore
 	#Range: 1 ~ 256
-	ArcaneCrystalOreMinHeight = 0
+	ArcaneCrystalOreMinHeight = 1
 	#Minimum height for the Dark Runestone
 	#Range: 1 ~ 256
-	DarkRunestoneMinHeight = 0
+	DarkRunestoneMinHeight = 1
 
 [worldgen]
 	#Generate Edelwood Trees

@@ -1,0 +1,1529 @@
+<html><head><title>Script Accessors</title><style>
+table{font-family:arial, sans-serif;border-collapse:collapse;}
+td,th{border:1px solid #666666;text-align:left;padding:8px;min-width:45px;}
+th{background-color:#CCCCCC;}
+p{margin:0;}
+tr:nth-child(even){background-color:#D8D8D8;}
+tr:nth-child(odd){background-color:#EEEEEE;}
+td.true{background-color:#72FF85AA;}
+td.false{background-color:#FF6666AA;}
+td.other{background-color:#42A3FFAA;}
+td.error{color:#FF0000;}
+th,td.true,td.false,td.other{text-align:center;}
+</style><link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/am80ox1.png"></head><body>
+<ul>
+<li><a href="#EntityAccessor">EntityAccessor</a></li>
+<li><a href="#LivingEntityAccessor">LivingEntityAccessor</a></li>
+<li><a href="#WorldAccessor">WorldAccessor</a></li>
+<li><a href="#BlockStateAccessor">BlockStateAccessor</a></li>
+<li><a href="#DamageSourceAccessor">DamageSourceAccessor</a></li>
+<li><a href="#AbilityAccessor">AbilityAccessor</a></li>
+<li><a href="#ConditionAccessor">ConditionAccessor</a></li>
+<li><a href="#CompoundNBTAccessor">CompoundNBTAccessor</a></li>
+</ul>
+<hr>
+
+<p><h1 id="EntityAccessor">EntityAccessor</h1>
+<table>
+<tr><th>Function</th><th>Return Type</th><th>Parameters</th></tr>
+<tr>
+<td>getName</td>
+<td>String</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isAlive</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setName</td>
+<td>void</td>
+<td>
+<strong>name</strong> - String
+</td>
+</tr>
+<tr>
+<td>getThreeData</td>
+<td>Object</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>isSneaking</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isInvisible</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>sendTranslatedMessage</td>
+<td>void</td>
+<td>
+<strong>translationKey</strong> - String
+<br>
+<strong>args</strong> - Object[]
+<br>
+</td>
+</tr>
+<tr>
+<td>setPositionAndRotation</td>
+<td>void</td>
+<td>
+<strong>x</strong> - double
+<br>
+<strong>y</strong> - double
+<br>
+<strong>z</strong> - double
+<br>
+<strong>yaw</strong> - float
+<br>
+<strong>pitch</strong> - float
+<br>
+</td>
+</tr>
+<tr>
+<td>getHorizontalFacing</td>
+<td>Direction</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setYaw</td>
+<td>float</td>
+<td>
+<strong>yaw</strong> - float
+</td>
+</tr>
+<tr>
+<td>getFallDistance</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getWidth</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getTicksExisted</td>
+<td>int</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>startSizeChange</td>
+<td>void</td>
+<td>
+<strong>size</strong> - float
+<br>
+<strong>sizeChangeType</strong> - String
+<br>
+</td>
+</tr>
+<tr>
+<td>setSizeDirectly</td>
+<td>void</td>
+<td>
+<strong>size</strong> - float
+<br>
+<strong>sizeChangeType</strong> - String
+<br>
+</td>
+</tr>
+<tr>
+<td>getHeight</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getPosX</td>
+<td>double</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getPosY</td>
+<td>double</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getWorld</td>
+<td>WorldAccessor</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getPosZ</td>
+<td>double</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getYaw</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setRotation</td>
+<td>void</td>
+<td>
+<strong>yaw</strong> - float
+<br>
+<strong>pitch</strong> - float
+<br>
+</td>
+</tr>
+<tr>
+<td>extinguish</td>
+<td>void</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isImmuneToFire</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>kill</td>
+<td>void</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setPosition</td>
+<td>void</td>
+<td>
+<strong>x</strong> - double
+<br>
+<strong>y</strong> - double
+<br>
+<strong>z</strong> - double
+<br>
+</td>
+</tr>
+<tr>
+<td>setMotion</td>
+<td>void</td>
+<td>
+<strong>x</strong> - double
+<br>
+<strong>y</strong> - double
+<br>
+<strong>z</strong> - double
+<br>
+</td>
+</tr>
+<tr>
+<td>getUUID</td>
+<td>String</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getPersistentData</td>
+<td>CompoundNBTAccessor</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>sendMessage</td>
+<td>void</td>
+<td>
+<strong>message</strong> - String
+</td>
+</tr>
+<tr>
+<td>getPitch</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setPitch</td>
+<td>void</td>
+<td>
+<strong>pitch</strong> - float
+</td>
+</tr>
+<tr>
+<td>isOnGround</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setNoClip</td>
+<td>void</td>
+<td>
+<strong>noClip</strong> - boolean
+</td>
+</tr>
+<tr>
+<td>stopRiding</td>
+<td>void</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isLiving</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getPassengers</td>
+<td>EntityAccessor[]</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isPassenger</td>
+<td>boolean</td>
+<td>
+<strong>entity</strong> - EntityAccessor
+</td>
+</tr>
+<tr>
+<td>setInvisible</td>
+<td>void</td>
+<td>
+<strong>invisible</strong> - boolean
+</td>
+</tr>
+<tr>
+<td>setFallDistance</td>
+<td>void</td>
+<td>
+<strong>fallDistance</strong> - float
+</td>
+</tr>
+<tr>
+<td>startRiding</td>
+<td>boolean</td>
+<td>
+<strong>entity</strong> - EntityAccessor
+<br>
+<strong>force</strong> - boolean
+<br>
+</td>
+</tr>
+<tr>
+<td>setOnFire</td>
+<td>void</td>
+<td>
+<strong>seconds</strong> - int
+</td>
+</tr>
+<tr>
+<td>playSoundAt</td>
+<td>void</td>
+<td>
+<strong>id</strong> - String
+<br>
+<strong>volume</strong> - float
+<br>
+<strong>pitch</strong> - float
+<br>
+</td>
+</tr>
+<tr>
+<td>setThreeData</td>
+<td>boolean</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - Object
+<br>
+</td>
+</tr>
+<tr>
+<td>getMotion</td>
+<td>Vec3d</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>addMotion</td>
+<td>void</td>
+<td>
+<strong>x</strong> - double
+<br>
+<strong>y</strong> - double
+<br>
+<strong>z</strong> - double
+<br>
+</td>
+</tr>
+<tr>
+<td>getEyeHeight</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>hasNoGravity</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setNoGravity</td>
+<td>void</td>
+<td>
+<strong>noGravity</strong> - boolean
+</td>
+</tr>
+<tr>
+<td>removePassengers</td>
+<td>void</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>noClip</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>executeCommand</td>
+<td>int</td>
+<td>
+<strong>command</strong> - String
+</td>
+</tr>
+<tr>
+<td>setNameVisible</td>
+<td>void</td>
+<td>
+<strong>visible</strong> - boolean
+</td>
+</tr>
+<tr>
+<td>isPlayer</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+</table>
+</p><hr>
+
+<p><h1 id="LivingEntityAccessor">LivingEntityAccessor</h1>
+<table>
+<tr><th>Function</th><th>Return Type</th><th>Parameters</th></tr>
+<tr>
+<td>isChild</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getMovementSpeed</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getAbsorptionAmount</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getAbilityById</td>
+<td>AbilityAccessor</td>
+<td>
+<strong>abilityId</strong> - String
+</td>
+</tr>
+<tr>
+<td>getAbilities</td>
+<td>AbilityAccessor[]</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getAbilities</td>
+<td>AbilityAccessor[]</td>
+<td>
+<strong>containerId</strong> - String
+</td>
+</tr>
+<tr>
+<td>heal</td>
+<td>void</td>
+<td>
+<strong>amount</strong> - float
+</td>
+</tr>
+<tr>
+<td>setHealth</td>
+<td>void</td>
+<td>
+<strong>health</strong> - float
+</td>
+</tr>
+<tr>
+<td>isSleeping</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getHealth</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isElytraFlying</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isOnLadder</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setMovementSpeed</td>
+<td>void</td>
+<td>
+<strong>speed</strong> - float
+</td>
+</tr>
+<tr>
+<td>isUndead</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getMaxHealth</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getItemInSlot</td>
+<td>ItemStackAccessor</td>
+<td>
+<strong>slot</strong> - String
+</td>
+</tr>
+<tr>
+<td>setItemInSlot</td>
+<td>void</td>
+<td>
+<strong>slot</strong> - String
+<br>
+<strong>item</strong> - Object
+<br>
+</td>
+</tr>
+<tr>
+<td>getName</td>
+<td>String</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isAlive</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setName</td>
+<td>void</td>
+<td>
+<strong>name</strong> - String
+</td>
+</tr>
+<tr>
+<td>getThreeData</td>
+<td>Object</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>isSneaking</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isInvisible</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>sendTranslatedMessage</td>
+<td>void</td>
+<td>
+<strong>translationKey</strong> - String
+<br>
+<strong>args</strong> - Object[]
+<br>
+</td>
+</tr>
+<tr>
+<td>setPositionAndRotation</td>
+<td>void</td>
+<td>
+<strong>x</strong> - double
+<br>
+<strong>y</strong> - double
+<br>
+<strong>z</strong> - double
+<br>
+<strong>yaw</strong> - float
+<br>
+<strong>pitch</strong> - float
+<br>
+</td>
+</tr>
+<tr>
+<td>getHorizontalFacing</td>
+<td>Direction</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setYaw</td>
+<td>float</td>
+<td>
+<strong>yaw</strong> - float
+</td>
+</tr>
+<tr>
+<td>getFallDistance</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getWidth</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getTicksExisted</td>
+<td>int</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>startSizeChange</td>
+<td>void</td>
+<td>
+<strong>size</strong> - float
+<br>
+<strong>sizeChangeType</strong> - String
+<br>
+</td>
+</tr>
+<tr>
+<td>setSizeDirectly</td>
+<td>void</td>
+<td>
+<strong>size</strong> - float
+<br>
+<strong>sizeChangeType</strong> - String
+<br>
+</td>
+</tr>
+<tr>
+<td>getHeight</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getPosX</td>
+<td>double</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getPosY</td>
+<td>double</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getWorld</td>
+<td>WorldAccessor</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getPosZ</td>
+<td>double</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getYaw</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setRotation</td>
+<td>void</td>
+<td>
+<strong>yaw</strong> - float
+<br>
+<strong>pitch</strong> - float
+<br>
+</td>
+</tr>
+<tr>
+<td>extinguish</td>
+<td>void</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isImmuneToFire</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>kill</td>
+<td>void</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setPosition</td>
+<td>void</td>
+<td>
+<strong>x</strong> - double
+<br>
+<strong>y</strong> - double
+<br>
+<strong>z</strong> - double
+<br>
+</td>
+</tr>
+<tr>
+<td>setMotion</td>
+<td>void</td>
+<td>
+<strong>x</strong> - double
+<br>
+<strong>y</strong> - double
+<br>
+<strong>z</strong> - double
+<br>
+</td>
+</tr>
+<tr>
+<td>getUUID</td>
+<td>String</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getPersistentData</td>
+<td>CompoundNBTAccessor</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>sendMessage</td>
+<td>void</td>
+<td>
+<strong>message</strong> - String
+</td>
+</tr>
+<tr>
+<td>getPitch</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setPitch</td>
+<td>void</td>
+<td>
+<strong>pitch</strong> - float
+</td>
+</tr>
+<tr>
+<td>isOnGround</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setNoClip</td>
+<td>void</td>
+<td>
+<strong>noClip</strong> - boolean
+</td>
+</tr>
+<tr>
+<td>stopRiding</td>
+<td>void</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isLiving</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getPassengers</td>
+<td>EntityAccessor[]</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isPassenger</td>
+<td>boolean</td>
+<td>
+<strong>entity</strong> - EntityAccessor
+</td>
+</tr>
+<tr>
+<td>setInvisible</td>
+<td>void</td>
+<td>
+<strong>invisible</strong> - boolean
+</td>
+</tr>
+<tr>
+<td>setFallDistance</td>
+<td>void</td>
+<td>
+<strong>fallDistance</strong> - float
+</td>
+</tr>
+<tr>
+<td>startRiding</td>
+<td>boolean</td>
+<td>
+<strong>entity</strong> - EntityAccessor
+<br>
+<strong>force</strong> - boolean
+<br>
+</td>
+</tr>
+<tr>
+<td>setOnFire</td>
+<td>void</td>
+<td>
+<strong>seconds</strong> - int
+</td>
+</tr>
+<tr>
+<td>playSoundAt</td>
+<td>void</td>
+<td>
+<strong>id</strong> - String
+<br>
+<strong>volume</strong> - float
+<br>
+<strong>pitch</strong> - float
+<br>
+</td>
+</tr>
+<tr>
+<td>setThreeData</td>
+<td>boolean</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - Object
+<br>
+</td>
+</tr>
+<tr>
+<td>getMotion</td>
+<td>Vec3d</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>addMotion</td>
+<td>void</td>
+<td>
+<strong>x</strong> - double
+<br>
+<strong>y</strong> - double
+<br>
+<strong>z</strong> - double
+<br>
+</td>
+</tr>
+<tr>
+<td>getEyeHeight</td>
+<td>float</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>hasNoGravity</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setNoGravity</td>
+<td>void</td>
+<td>
+<strong>noGravity</strong> - boolean
+</td>
+</tr>
+<tr>
+<td>removePassengers</td>
+<td>void</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>noClip</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>executeCommand</td>
+<td>int</td>
+<td>
+<strong>command</strong> - String
+</td>
+</tr>
+<tr>
+<td>setNameVisible</td>
+<td>void</td>
+<td>
+<strong>visible</strong> - boolean
+</td>
+</tr>
+<tr>
+<td>isPlayer</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+</table>
+</p><hr>
+
+<p><h1 id="WorldAccessor">WorldAccessor</h1>
+<table>
+<tr><th>Function</th><th>Return Type</th><th>Parameters</th></tr>
+<tr>
+<td>setTime</td>
+<td>void</td>
+<td>
+<strong>time</strong> - long
+</td>
+</tr>
+<tr>
+<td>getTime</td>
+<td>long</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isRaining</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setBlockState</td>
+<td>void</td>
+<td>
+<strong>block</strong> - Object
+<br>
+<strong>x</strong> - int
+<br>
+<strong>y</strong> - int
+<br>
+<strong>z</strong> - int
+<br>
+</td>
+</tr>
+<tr>
+<td>getBlockState</td>
+<td>BlockStateAccessor</td>
+<td>
+<strong>x</strong> - int
+<br>
+<strong>y</strong> - int
+<br>
+<strong>z</strong> - int
+<br>
+</td>
+</tr>
+<tr>
+<td>isThundering</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>setRainStrength</td>
+<td>void</td>
+<td>
+<strong>strength</strong> - float
+</td>
+</tr>
+<tr>
+<td>summonLightning</td>
+<td>void</td>
+<td>
+<strong>x</strong> - double
+<br>
+<strong>y</strong> - double
+<br>
+<strong>z</strong> - double
+<br>
+<strong>effectOnly</strong> - boolean
+<br>
+</td>
+</tr>
+</table>
+</p><hr>
+
+<p><h1 id="BlockStateAccessor">BlockStateAccessor</h1>
+<table>
+<tr><th>Function</th><th>Return Type</th><th>Parameters</th></tr>
+<tr>
+<td>getProperty</td>
+<td>Object</td>
+<td>
+<strong>property</strong> - Object
+</td>
+</tr>
+<tr>
+<td>getBlock</td>
+<td>String</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getPropertyByName</td>
+<td>IProperty</td>
+<td>
+<strong>name</strong> - String
+</td>
+</tr>
+<tr>
+<td>withProperty</td>
+<td>BlockStateAccessor</td>
+<td>
+<strong>property</strong> - Object
+<br>
+<strong>value</strong> - Comparable
+<br>
+</td>
+</tr>
+</table>
+</p><hr>
+
+<p><h1 id="DamageSourceAccessor">DamageSourceAccessor</h1>
+<table>
+<tr><th>Function</th><th>Return Type</th><th>Parameters</th></tr>
+<tr>
+<td>getType</td>
+<td>String</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getImmediateSource</td>
+<td>EntityAccessor</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getTrueSource</td>
+<td>EntityAccessor</td>
+<td>
+/
+</td>
+</tr>
+</table>
+</p><hr>
+
+<p><h1 id="AbilityAccessor">AbilityAccessor</h1>
+<table>
+<tr><th>Function</th><th>Return Type</th><th>Parameters</th></tr>
+<tr>
+<td>getId</td>
+<td>String</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getType</td>
+<td>String</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getData</td>
+<td>Object</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>setData</td>
+<td>boolean</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - Object
+<br>
+</td>
+</tr>
+<tr>
+<td>isEnabled</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getAdditionalNbtData</td>
+<td>CompoundNBTAccessor</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isUnlocked</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getContainerId</td>
+<td>String</td>
+<td>
+/
+</td>
+</tr>
+</table>
+</p><hr>
+
+<p><h1 id="ConditionAccessor">ConditionAccessor</h1>
+<table>
+<tr><th>Function</th><th>Return Type</th><th>Parameters</th></tr>
+<tr>
+<td>getType</td>
+<td>String</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getData</td>
+<td>Object</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>setData</td>
+<td>boolean</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - Object
+<br>
+</td>
+</tr>
+<tr>
+<td>isInverted</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getAbility</td>
+<td>AbilityAccessor</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>isEnabling</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+</table>
+</p><hr>
+
+<p><h1 id="CompoundNBTAccessor">CompoundNBTAccessor</h1>
+<table>
+<tr><th>Function</th><th>Return Type</th><th>Parameters</th></tr>
+<tr>
+<td>remove</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>getBoolean</td>
+<td>boolean</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>getByte</td>
+<td>byte</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>putByte</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - byte
+<br>
+</td>
+</tr>
+<tr>
+<td>getShort</td>
+<td>short</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>putShort</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - short
+<br>
+</td>
+</tr>
+<tr>
+<td>getInt</td>
+<td>int</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>putInt</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - int
+<br>
+</td>
+</tr>
+<tr>
+<td>getLong</td>
+<td>long</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>putLong</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - long
+<br>
+</td>
+</tr>
+<tr>
+<td>getFloat</td>
+<td>float</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>putFloat</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - float
+<br>
+</td>
+</tr>
+<tr>
+<td>getDouble</td>
+<td>double</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>putDouble</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - double
+<br>
+</td>
+</tr>
+<tr>
+<td>isEmpty</td>
+<td>boolean</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>contains</td>
+<td>boolean</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>contains</td>
+<td>boolean</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>type</strong> - int
+<br>
+</td>
+</tr>
+<tr>
+<td>merge</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>otherTag</strong> - CompoundNBTAccessor
+</td>
+</tr>
+<tr>
+<td>copy</td>
+<td>CompoundNBTAccessor</td>
+<td>
+/
+</td>
+</tr>
+<tr>
+<td>getString</td>
+<td>String</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>putByteArray</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - byte[]
+<br>
+</td>
+</tr>
+<tr>
+<td>getUniqueId</td>
+<td>String</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>getLongArray</td>
+<td>long[]</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>getByteArray</td>
+<td>byte[]</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>getIntArray</td>
+<td>int[]</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>getCompound</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>putUniqueId</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - String
+<br>
+</td>
+</tr>
+<tr>
+<td>putString</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - String
+<br>
+</td>
+</tr>
+<tr>
+<td>putLongArray</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - long[]
+<br>
+</td>
+</tr>
+<tr>
+<td>getTagId</td>
+<td>byte</td>
+<td>
+<strong>key</strong> - String
+</td>
+</tr>
+<tr>
+<td>putIntArray</td>
+<td>CompoundNBTAccessor</td>
+<td>
+<strong>key</strong> - String
+<br>
+<strong>value</strong> - int[]
+<br>
+</td>
+</tr>
+</table>
+</p><hr>
+

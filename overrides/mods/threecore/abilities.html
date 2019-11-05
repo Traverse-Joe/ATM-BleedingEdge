@@ -1,0 +1,445 @@
+<html><head><title>Abilities</title><style>
+table{font-family:arial, sans-serif;border-collapse:collapse;}
+td,th{border:1px solid #666666;text-align:left;padding:8px;min-width:45px;}
+th{background-color:#CCCCCC;}
+p{margin:0;}
+tr:nth-child(even){background-color:#D8D8D8;}
+tr:nth-child(odd){background-color:#EEEEEE;}
+td.true{background-color:#72FF85AA;}
+td.false{background-color:#FF6666AA;}
+td.other{background-color:#42A3FFAA;}
+td.error{color:#FF0000;}
+th,td.true,td.false,td.other{text-align:center;}
+</style><link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/am80ox1.png"></head><body><h1>ThreeCore</h1>
+<ul>
+<li><a href="#threecore:dummy">Dummy</a></li>
+<li><a href="#threecore:command">Command</a></li>
+<li><a href="#threecore:healing">Healing</a></li>
+<li><a href="#threecore:flight">Flight</a></li>
+<li><a href="#threecore:teleport">Teleport</a></li>
+<li><a href="#threecore:attribute_modifier">Attribute Modifier</a></li>
+<li><a href="#threecore:invisibility">Invisibility</a></li>
+<li><a href="#threecore:slowfall">Slowfall</a></li>
+<li><a href="#threecore:water_breathing">Water Breathing</a></li>
+<li><a href="#threecore:size_change">Size Change</a></li>
+<li><a href="#threecore:custom_hotbar">Custom Hotbar</a></li>
+<li><a href="#threecore:opening_nbt_timer">Open/Close</a></li>
+<li><a href="#threecore:model_layer">Model Layer</a></li>
+</ul>
+
+<hr>
+<p><h1 id="threecore:dummy">Dummy</h1>
+<h3>threecore:dummy</h3>
+<p>Example:<br>
+<code><pre id="threecore:dummy_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:dummy",  "show_in_bar": false,  "title": {"translate":"ability.threecore.dummy"},  "icon": {"item":"minecraft:barrier","count":1,"type":"threecore:item"}}}');document.getElementById('threecore:dummy_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.dummy"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"item":"minecraft:barrier","count":1,"type":"threecore:item"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:command">Command</h1>
+<h3>threecore:command</h3>
+<p>Example:<br>
+<code><pre id="threecore:command_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:command",  "show_in_bar": false,  "title": {"translate":"ability.threecore.command"},  "icon": {"item":"minecraft:command_block","count":1,"type":"threecore:item"},  "commands": "/say Hello World"}}');document.getElementById('threecore:command_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.command"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"item":"minecraft:command_block","count":1,"type":"threecore:item"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br><tr>
+<td><code>commands</code></td>
+<td><code>CommandListThreeData$CommandList</code></td>
+<td><code>"/say Hello World"</code></td>
+<td><p>Sets the commands which get executed when using the ability</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:healing">Healing</h1>
+<h3>threecore:healing</h3>
+<p>Example:<br>
+<code><pre id="threecore:healing_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:healing",  "show_in_bar": false,  "title": {"translate":"ability.threecore.healing"},  "icon": {"texture":"threecore:textures/gui/icons.png","u":0,"v":0,"width":16,"height":16,"texture_width":256,"texture_height":256,"type":"threecore:texture"},  "frequency": 20,  "amount": 0.5}}');document.getElementById('threecore:healing_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.healing"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"texture":"threecore:textures/gui/icons.png","u":0,"v":0,"width":16,"height":16,"texture_width":256,"texture_height":256,"type":"threecore:texture"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br><tr>
+<td><code>frequency</code></td>
+<td><code>Integer</code></td>
+<td><code>20</code></td>
+<td><p>Sets the frequency of healing (in ticks)</p>
+</td></tr><br><tr>
+<td><code>amount</code></td>
+<td><code>Float</code></td>
+<td><code>0.5</code></td>
+<td><p>Sets the amount of hearts for each healing</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:flight">Flight</h1>
+<h3>threecore:flight</h3>
+<p>Example:<br>
+<code><pre id="threecore:flight_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:flight",  "show_in_bar": false,  "title": {"translate":"ability.threecore.flight"},  "icon": {"texture":"threecore:textures/gui/icons.png","u":0,"v":16,"width":16,"height":16,"texture_width":256,"texture_height":256,"type":"threecore:texture"},  "speed": 1.0,  "sprint_speed": 3.0,  "rotate_arms": true}}');document.getElementById('threecore:flight_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.flight"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"texture":"threecore:textures/gui/icons.png","u":0,"v":16,"width":16,"height":16,"texture_width":256,"texture_height":256,"type":"threecore:texture"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br><tr>
+<td><code>speed</code></td>
+<td><code>Float</code></td>
+<td><code>1.0</code></td>
+<td><p>Sets the speed multiplier for flying when you are NOT sprinting</p>
+</td></tr><br><tr>
+<td><code>sprint_speed</code></td>
+<td><code>Float</code></td>
+<td><code>3.0</code></td>
+<td><p>Sets the speed multiplier for flying when you are sprinting</p>
+</td></tr><br><tr>
+<td><code>rotate_arms</code></td>
+<td><code>Boolean</code></td>
+<td><code>true</code></td>
+<td><p>If enabled the players arms will face in your direction (like Superman)</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:teleport">Teleport</h1>
+<h3>threecore:teleport</h3>
+<p>Example:<br>
+<code><pre id="threecore:teleport_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:teleport",  "show_in_bar": false,  "title": {"translate":"ability.threecore.teleport"},  "icon": {"item":"minecraft:ender_pearl","count":1,"type":"threecore:item"},  "distance": 5.0}}');document.getElementById('threecore:teleport_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.teleport"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"item":"minecraft:ender_pearl","count":1,"type":"threecore:item"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br><tr>
+<td><code>distance</code></td>
+<td><code>Float</code></td>
+<td><code>5.0</code></td>
+<td><p>The maximum amount of blocks you can teleport to</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:attribute_modifier">Attribute Modifier</h1>
+<h3>threecore:attribute_modifier</h3>
+<p>Example:<br>
+<code><pre id="threecore:attribute_modifier_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:attribute_modifier",  "show_in_bar": false,  "title": {"translate":"ability.threecore.attribute_modifier"},  "icon": {"item":"minecraft:barrier","count":1,"type":"threecore:item"},  "attribute": "minecraft:knockback_resistance",  "amount": 1.0,  "operation": 0,  "uuid": "3ab5c4d5-cddf-478f-abd8-475410791321"}}');document.getElementById('threecore:attribute_modifier_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.attribute_modifier"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"item":"minecraft:barrier","count":1,"type":"threecore:item"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br><tr>
+<td><code>attribute</code></td>
+<td><code>IAttribute</code></td>
+<td><code>"minecraft:knockback_resistance"</code></td>
+<td><p>Determines which attribute should be modified. Possible attribute: "minecraft:max_health", "minecraft:follow_range", "minecraft:knockback_resistance", "minecraft:movement_speed", "minecraft:flying_speed", "minecraft:attack_damage", "minecraft:attack_speed", "minecraft:armor", "minecraft:armor_toughness", "minecraft:luck", "minecraft:reach_distance", "forge:nametag_distance", "forge:swim_speed", "forge:gravity", "threecore:size_width", "threecore:size_height", "threecore:step_height", "threecore:fall_resistance", "threecore:jump_height", "threecore:sprint_speed"</p>
+</td></tr><br><tr>
+<td><code>amount</code></td>
+<td><code>Float</code></td>
+<td><code>1.0</code></td>
+<td><p>The amount for the giving attribute modifier</p>
+</td></tr><br><tr>
+<td><code>operation</code></td>
+<td><code>AttributeModifier$Operation</code></td>
+<td><code>0</code></td>
+<td><p>The operation for the giving attribute modifier (More: https://minecraft.gamepedia.com/Attribute#Operations)</p>
+</td></tr><br><tr>
+<td><code>uuid</code></td>
+<td><code>UUID</code></td>
+<td><code>"3ab5c4d5-cddf-478f-abd8-475410791321"</code></td>
+<td><p>Sets the unique identifier for this attribute modifier. If not specified it will generate a random one</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:invisibility">Invisibility</h1>
+<h3>threecore:invisibility</h3>
+<p>Example:<br>
+<code><pre id="threecore:invisibility_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:invisibility",  "show_in_bar": false,  "title": {"translate":"ability.threecore.invisibility"},  "icon": {"texture":"threecore:textures/gui/icons.png","u":96,"v":16,"width":16,"height":16,"texture_width":256,"texture_height":256,"type":"threecore:texture"}}}');document.getElementById('threecore:invisibility_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.invisibility"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"texture":"threecore:textures/gui/icons.png","u":96,"v":16,"width":16,"height":16,"texture_width":256,"texture_height":256,"type":"threecore:texture"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:slowfall">Slowfall</h1>
+<h3>threecore:slowfall</h3>
+<p>Example:<br>
+<code><pre id="threecore:slowfall_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:slowfall",  "show_in_bar": false,  "title": {"translate":"ability.threecore.slowfall"},  "icon": {"item":"minecraft:feather","count":1,"type":"threecore:item"}}}');document.getElementById('threecore:slowfall_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.slowfall"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"item":"minecraft:feather","count":1,"type":"threecore:item"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:water_breathing">Water Breathing</h1>
+<h3>threecore:water_breathing</h3>
+<p>Example:<br>
+<code><pre id="threecore:water_breathing_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:water_breathing",  "show_in_bar": false,  "title": {"translate":"ability.threecore.water_breathing"},  "icon": {"texture":"threecore:textures/gui/icons.png","u":16,"v":16,"width":16,"height":16,"texture_width":256,"texture_height":256,"type":"threecore:texture"}}}');document.getElementById('threecore:water_breathing_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.water_breathing"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"texture":"threecore:textures/gui/icons.png","u":16,"v":16,"width":16,"height":16,"texture_width":256,"texture_height":256,"type":"threecore:texture"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:size_change">Size Change</h1>
+<h3>threecore:size_change</h3>
+<p>Example:<br>
+<code><pre id="threecore:size_change_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:size_change",  "show_in_bar": false,  "title": {"translate":"ability.threecore.size_change"},  "icon": {"texture":"threecore:textures/gui/icons.png","u":160,"v":0,"width":16,"height":16,"texture_width":256,"texture_height":256,"type":"threecore:texture"},  "size": 0.1,  "size_change_type": "threecore:default"}}');document.getElementById('threecore:size_change_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.size_change"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"texture":"threecore:textures/gui/icons.png","u":160,"v":0,"width":16,"height":16,"texture_width":256,"texture_height":256,"type":"threecore:texture"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br><tr>
+<td><code>size</code></td>
+<td><code>Float</code></td>
+<td><code>0.1</code></td>
+<td><p>Determines the size for the size change</p>
+</td></tr><br><tr>
+<td><code>size_change_type</code></td>
+<td><code>SizeChangeType</code></td>
+<td><code>"threecore:default"</code></td>
+<td><p>Determines the size change type for the size change</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:custom_hotbar">Custom Hotbar</h1>
+<h3>threecore:custom_hotbar</h3>
+<p>Example:<br>
+<code><pre id="threecore:custom_hotbar_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:custom_hotbar",  "show_in_bar": false,  "title": {"translate":"ability.threecore.custom_hotbar"},  "icon": {"item":"minecraft:stick","count":1,"type":"threecore:item"},  "hotbar_element": "health",  "texture": "minecraft:textures/gui/icons.png"}}');document.getElementById('threecore:custom_hotbar_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.custom_hotbar"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"item":"minecraft:stick","count":1,"type":"threecore:item"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br><tr>
+<td><code>hotbar_element</code></td>
+<td><code>RenderGameOverlayEvent$ElementType</code></td>
+<td><code>"health"</code></td>
+<td><p>Specified the hotbar element which shall be changed. Possible values: "all", "helmet", "portal", "crosshairs", "bosshealth", "bossinfo", "armor", "health", "food", "air", "hotbar", "experience", "text", "healthmount", "jumpbar", "chat", "player_list", "debug", "potion_icons", "subtitles", "fps_graph", "vignette"</p>
+</td></tr><br><tr>
+<td><code>texture</code></td>
+<td><code>ResourceLocation</code></td>
+<td><code>"minecraft:textures/gui/icons.png"</code></td>
+<td><p>Determines texture for overriding the hotbars one.</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:opening_nbt_timer">Open/Close</h1>
+<h3>threecore:opening_nbt_timer</h3>
+<p>Example:<br>
+<code><pre id="threecore:opening_nbt_timer_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:opening_nbt_timer",  "show_in_bar": false,  "title": {"translate":"ability.threecore.opening_nbt_timer"},  "icon": {"item":"minecraft:iron_helmet","count":1,"type":"threecore:item"},  "max_timer": 10,  "nbt_tag": "Opening"}}');document.getElementById('threecore:opening_nbt_timer_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.opening_nbt_timer"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"item":"minecraft:iron_helmet","count":1,"type":"threecore:item"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br><tr>
+<td><code>max_timer</code></td>
+<td><code>Integer</code></td>
+<td><code>10</code></td>
+<td><p>Sets the maximum value for the timer, there it goes from 0 to this value-1. You define it in ticks (20 ticks = 1 second).</p>
+</td></tr><br><tr>
+<td><code>nbt_tag</code></td>
+<td><code>String</code></td>
+<td><code>"Opening"</code></td>
+<td><p>Determines the nbt tag in the item which will be used.</p>
+</td></tr><br></table>
+
+
+<hr>
+<p><h1 id="threecore:model_layer">Model Layer</h1>
+<h3>threecore:model_layer</h3>
+<p>Example:<br>
+<code><pre id="threecore:model_layer_example"></pre></code><script> var json = JSON.parse('{"example_ability":{"ability":"threecore:model_layer",  "show_in_bar": false,  "title": {"translate":"ability.threecore.model_layer"},  "icon": {"item":"minecraft:barrier","count":1,"type":"threecore:item"},  "model_layer": "hello:world"}}');document.getElementById('threecore:model_layer_example').innerHTML = JSON.stringify(json, undefined, 2);</script>
+<table>
+<tr><th>Setting</th><th>Type</th><th>Default</th><th>Description</th></tr>
+<tr>
+<td><code>show_in_bar</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td><p>Determines if this ability should be displayed in the ability bar without a condition that displays it there.</p>
+</td></tr><br><tr>
+<td><code>title</code></td>
+<td><code>ITextComponent</code></td>
+<td><code>{"translate":"ability.threecore.model_layer"}</code></td>
+<td><p>Allows you to set a custom title for this ability</p>
+</td></tr><br><tr>
+<td><code>icon</code></td>
+<td><code>IIcon</code></td>
+<td><code>{"item":"minecraft:barrier","count":1,"type":"threecore:item"}</code></td>
+<td><p>Lets you customize the icon for the ability</p>
+</td></tr><br><tr>
+<td><code>model_layer</code></td>
+<td><code>ResourceLocation</code></td>
+<td><code>"hello:world"</code></td>
+<td><p>Determines the id for the model layer this ability will look for. The model layer json file must be in 'assets/<namespace>/model_layers'.</p>
+</td></tr><br></table>
+
+
+</body></html>

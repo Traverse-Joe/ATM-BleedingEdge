@@ -1,0 +1,72 @@
+
+#ThreeCore base settings
+[base]
+
+	[base.ore]
+
+		[base.ore.copper]
+			size = 8
+			count = 8
+			minHeight = 40
+			maxHeight = 75
+
+		[base.ore.tin]
+			size = 8
+			count = 7
+			minHeight = 20
+			maxHeight = 55
+
+		[base.ore.lead]
+			size = 8
+			count = 4
+			minHeight = 10
+			maxHeight = 35
+
+		[base.ore.silver]
+			size = 8
+			count = 4
+			minHeight = 5
+			maxHeight = 30
+
+		[base.ore.palladium]
+			size = 6
+			count = 3
+			minHeight = 10
+			maxHeight = 25
+
+		[base.ore.vibranium]
+			size = 3
+			count = 1
+			minHeight = 0
+			maxHeight = 16
+
+		[base.ore.osmium]
+			size = 8
+			count = 4
+			minHeight = 10
+			maxHeight = 40
+
+		[base.ore.uranium]
+			size = 2
+			count = 5
+			minHeight = 10
+			maxHeight = 25
+
+		[base.ore.titanium]
+			size = 3
+			count = 2
+			minHeight = 0
+			maxHeight = 16
+
+		[base.ore.iridium]
+			size = 3
+			count = 1
+			minHeight = 0
+			maxHeight = 16
+
+		[base.ore.uru]
+			size = 3
+			count = 1
+			minHeight = 0
+			maxHeight = 16
+

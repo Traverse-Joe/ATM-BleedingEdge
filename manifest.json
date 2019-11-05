@@ -11,12 +11,22 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "All the Mods -  Bleeding Edge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Radient_Sora",
   "files": [
     {
       "projectID": 238222,
       "fileID": 2804030,
+      "required": true
+    },
+    {
+      "projectID": 271740,
+      "fileID": 2775591,
+      "required": true
+    },
+    {
+      "projectID": 254294,
+      "fileID": 2821119,
       "required": true
     },
     {
@@ -30,6 +40,11 @@
       "required": true
     },
     {
+      "projectID": 313866,
+      "fileID": 2821555,
+      "required": true
+    },
+    {
       "projectID": 326895,
       "fileID": 2790529,
       "required": true
@@ -37,6 +52,11 @@
     {
       "projectID": 223852,
       "fileID": 2788023,
+      "required": true
+    },
+    {
+      "projectID": 261251,
+      "fileID": 2758171,
       "required": true
     },
     {
@@ -50,6 +70,21 @@
       "required": true
     },
     {
+      "projectID": 344913,
+      "fileID": 2798617,
+      "required": true
+    },
+    {
+      "projectID": 316946,
+      "fileID": 2816776,
+      "required": true
+    },
+    {
+      "projectID": 319716,
+      "fileID": 2812319,
+      "required": true
+    },
+    {
       "projectID": 277064,
       "fileID": 2818837,
       "required": true
@@ -57,6 +92,11 @@
     {
       "projectID": 242998,
       "fileID": 2783899,
+      "required": true
+    },
+    {
+      "projectID": 240783,
+      "fileID": 2763768,
       "required": true
     },
     {
@@ -70,6 +110,21 @@
       "required": true
     },
     {
+      "projectID": 293425,
+      "fileID": 2813827,
+      "required": true
+    },
+    {
+      "projectID": 268495,
+      "fileID": 2789953,
+      "required": true
+    },
+    {
+      "projectID": 293426,
+      "fileID": 2807276,
+      "required": true
+    },
+    {
       "projectID": 254652,
       "fileID": 2753539,
       "required": true
@@ -77,6 +132,11 @@
     {
       "projectID": 291493,
       "fileID": 2816173,
+      "required": true
+    },
+    {
+      "projectID": 334985,
+      "fileID": 2815824,
       "required": true
     },
     {
@@ -97,6 +157,11 @@
     {
       "projectID": 220311,
       "fileID": 2805015,
+      "required": true
+    },
+    {
+      "projectID": 326957,
+      "fileID": 2814438,
       "required": true
     },
     {
@@ -150,6 +215,11 @@
       "required": true
     },
     {
+      "projectID": 298187,
+      "fileID": 2820989,
+      "required": true
+    },
+    {
       "projectID": 221743,
       "fileID": 2815401,
       "required": true
@@ -161,7 +231,7 @@
     },
     {
       "projectID": 239197,
-      "fileID": 2821635,
+      "fileID": 2822185,
       "required": true
     },
     {
@@ -172,6 +242,11 @@
     {
       "projectID": 233105,
       "fileID": 2819892,
+      "required": true
+    },
+    {
+      "projectID": 349447,
+      "fileID": 2820395,
       "required": true
     },
     {
@@ -195,8 +270,23 @@
       "required": true
     },
     {
+      "projectID": 320098,
+      "fileID": 2791029,
+      "required": true
+    },
+    {
+      "projectID": 250294,
+      "fileID": 2818870,
+      "required": true
+    },
+    {
       "projectID": 309858,
       "fileID": 2817435,
+      "required": true
+    },
+    {
+      "projectID": 344209,
+      "fileID": 2821366,
       "required": true
     },
     {
@@ -210,8 +300,23 @@
       "required": true
     },
     {
+      "projectID": 69162,
+      "fileID": 2820396,
+      "required": true
+    },
+    {
       "projectID": 290209,
       "fileID": 2819895,
+      "required": true
+    },
+    {
+      "projectID": 250603,
+      "fileID": 2815211,
+      "required": true
+    },
+    {
+      "projectID": 240633,
+      "fileID": 2811170,
       "required": true
     },
     {
@@ -231,12 +336,17 @@
     },
     {
       "projectID": 326258,
-      "fileID": 2816352,
+      "fileID": 2822229,
       "required": true
     },
     {
       "projectID": 228756,
       "fileID": 2783917,
+      "required": true
+    },
+    {
+      "projectID": 340666,
+      "fileID": 2821364,
       "required": true
     },
     {
@@ -262,6 +372,16 @@
     {
       "projectID": 60089,
       "fileID": 2803624,
+      "required": true
+    },
+    {
+      "projectID": 254268,
+      "fileID": 2808835,
+      "required": true
+    },
+    {
+      "projectID": 349285,
+      "fileID": 2822059,
       "required": true
     },
     {
